@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chatbot-cli"
+version = "0.1.0"
+description = "A simple command-line chatbot for a local Ollama model"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+
+[project.scripts]
+chatbot-cli = "chatbot_cli.app:main"
+
+[tool.setuptools.packages.find]
+include = ["chatbot_cli*"]
