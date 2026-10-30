@@ -36,6 +36,20 @@ Type a message at the `You:` prompt and press Enter. The answer appears after
 earlier messages, and `/exit` to quit. Chat history is not saved
 when you close the app.
 
+### Run with uv
+
+If you use [uv](https://docs.astral.sh/uv/getting-started/installation/), run
+this from the project folder:
+
+```bash
+uv run chatbot-cli
+```
+
+uv reads `pyproject.toml`, creates the project environment, and runs the
+`chatbot-cli` command. You do not need to activate a virtual environment or
+run `uv init` first. To pass an option, for example, use
+`uv run chatbot-cli --model qwen3.6:latest`.
+
 ### Optional: install a terminal command
 
 If you want to run `chatbot-cli` from any folder, create a virtual environment
@@ -77,6 +91,8 @@ changes the Ollama server address. The defaults are `qwen3.6:latest` and
 ```bash
 python3 -m unittest discover -s tests -v
 ```
+
+With uv, run `uv run python -m unittest discover -s tests -v` instead.
 
 The tests use fake Ollama responses, so they do not need a running Ollama
 instance or a downloaded model.
